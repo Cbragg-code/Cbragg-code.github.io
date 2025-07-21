@@ -2659,8 +2659,7 @@ input, select, textarea {
 			}
 
 		}
-/*
-commented out for now. May use again later.
+
 	a.image {
 		overflow: hidden;
 	}
@@ -2678,7 +2677,7 @@ commented out for now. May use again later.
 			-ms-transform: scale(1.05);
 			transform: scale(1.05);
 		}
-*/
+
 /* Actions */
 
 	ul.actions {
