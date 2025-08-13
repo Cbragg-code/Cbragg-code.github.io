@@ -4834,10 +4834,10 @@ body.dark-mode .button.primary:hover {
 .image.fit img,
 .image.main img {
     width: 100%;
-    aspect-ratio: 16/9; /* or remove if you want auto height */
+    aspect-ratio: 1/1;
     object-fit: contain;
-    border: 3px solid transparent; /* invisible but still preserves layout space */
-    border-radius: 8px; /* optional */
+    border: 3px solid transparent;
+    border-radius: 8px;
     box-sizing: border-box;
     background-color: transparent;
 }
