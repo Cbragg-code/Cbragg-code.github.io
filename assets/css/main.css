@@ -4831,3 +4831,13 @@ body.dark-mode .button.primary:hover {
     color: #121212 !important;
 }
 
+/* Force uniform size and add frames to all portfolio images */
+.image.fit img,
+.image.main img {
+    width: 100%;
+    height: 585px; /* adjust to desired height */
+    object-fit: cover; /* crops proportionally without distortion */
+    border: 3px solid #ccc; /* light gray frame */
+    border-radius: 8px; /* optional rounded corners */
+    box-sizing: border-box;
+}
