@@ -19,8 +19,8 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>Christopher Bragg</h1>
-						<h2>Engineer | Problem Solver | Analyst</h2>
+						<h1>Christopher Bragg</h1><br /><br />
+						<h2>Engineer | Problem Solver | Analyst</h2><br /><br />
 						<p>Demonstrating hands-on experience, analytical problem-solving, and a strong foundation in building efficient, scalable systems.</p>
 						<!-- <ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -43,8 +43,10 @@
 
 				<!-- Main -->
 					<div id="main">
+
+
 						<!-- Featured Post -->
-							<article class="post featured">
+						 <article class="post featured">
 								<header class="major">
 									<h2>Featured Project: BucStop</h2>
 									<p>Developed and maintained a virtual arcade web app as part of a 7-member Scrum team. 
@@ -58,6 +60,83 @@
 									<li><a href="https://github.com/Cbragg-code/BetterThanBucHunt/tree/StageTesting" class="button large">View Code</a></li>
 								</ul>
 							</article>
+							<!-- <section id="featured" class="featured-carousel" aria-label="Featured Projects">
+							<h2 class="section-title">Featured Projects</h2>
+
+							<div class="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects" aria-live="polite">
+								<button class="nav prev" aria-label="Previous project">&#10094;</button>
+
+								<div class="track" tabindex="0"> -->
+								<!-- Slide 1 -->
+								<!-- <article class="post featured slide" aria-roledescription="slide" aria-label="1 of 3">
+									<header class="major">
+									<h3>BucStop (Virtual Arcade)</h3>
+									<p>
+										Developed and maintained a virtual arcade web app as part of a 7-member Scrum team.
+										Implemented a fully automated CI/CD pipeline (AWS, Docker, GitHub Actions) and built
+										Selenium + NUnit test suites to raise quality and stability.
+										<br><br>
+										<strong>Key Tools &amp; Tech:</strong> C#, .NET, HTML, JS, CSS, Microservices, Selenium, NUnit, AWS, Docker, GitHub Actions, Jira, Agile/Scrum
+									</p>
+									</header>
+
+									<a href="https://github.com/Cbragg-code/BetterThanBucHunt/tree/StageTesting" class="image main">
+									<img src="images/BucStop.jpg" alt="Screenshot of BucStop virtual arcade web app">
+									</a>
+
+									<ul class="actions special">
+									<li><a href="https://github.com/Cbragg-code/BetterThanBucHunt/tree/StageTesting" class="button large">View Code</a></li>
+									</ul>
+								</article> -->
+
+								<!-- Slide 2 (example) -->
+								<!-- <article class="post featured slide" aria-roledescription="slide" aria-label="2 of 3">
+									<header class="major">
+									<h3>Supermarket Simulator (Python)</h3>
+									<p>
+										Built a realistic queueing simulator with stats, automation, and GUI. Focused on shortest-line logic,
+										pacing, and clean architecture. Included unit tests and CI.
+										<br><br>
+										<strong>Key Tools &amp; Tech:</strong> Python, Tkinter, OOP, PyTest, GitHub Actions
+									</p>
+									</header>
+
+									<a href="#" class="image main">
+									<img src="images/supermarket.jpg" alt="Screenshot of the supermarket simulator GUI">
+									</a>
+
+									<ul class="actions special">
+									<li><a href="#" class="button large">View Code</a></li>
+									</ul>
+								</article> -->
+
+								<!-- Slide 3 (example) -->
+								<!-- <article class="post featured slide" aria-roledescription="slide" aria-label="3 of 3">
+									<header class="major">
+									<h3>Calculator App (Python)</h3>
+									<p>
+										Refactored console and GUI calculator with persistent variables, clean file I/O, and human-readable comments.
+										Added tests and CI for reliability.
+										<br><br>
+										<strong>Key Tools &amp; Tech:</strong> Python, Tkinter, JSON I/O, PyTest, CI/CD
+									</p>
+									</header>
+
+									<a href="#" class="image main">
+									<img src="images/calculator.jpg" alt="Screenshot of the calculator GUI">
+									</a>
+
+									<ul class="actions special">
+									<li><a href="#" class="button large">View Code</a></li>
+									</ul>
+								</article>
+								</div>
+
+								<button class="nav next" aria-label="Next project">&#10095;</button>
+
+								<div class="dots" role="tablist" aria-label="Choose project"></div>
+							</div>
+							</section> -->
 
 							<!-- Posts -->
 							<section class="posts">
@@ -174,5 +253,94 @@
     			});
 			}
 			</script>
+
+			<script>
+			(function () {
+			const carousel = document.querySelector('.featured-carousel .carousel');
+			if (!carousel) return;
+
+			const track = carousel.querySelector('.track');
+			const slides = Array.from(track.querySelectorAll('.slide'));
+			const prevBtn = carousel.querySelector('.nav.prev');
+			const nextBtn = carousel.querySelector('.nav.next');
+			const dotsWrap = carousel.querySelector('.dots');
+
+			// Build dots
+			slides.forEach((_, i) => {
+				const b = document.createElement('button');
+				b.type = 'button';
+				b.setAttribute('role', 'tab');
+				b.setAttribute('aria-label', `Go to project ${i+1}`);
+				if (i === 0) b.setAttribute('aria-selected', 'true');
+				dotsWrap.appendChild(b);
+			});
+			const dots = Array.from(dotsWrap.querySelectorAll('button'));
+
+			// Helpers
+			const slideWidth = () => track.clientWidth;
+			const maxIndex = slides.length - 1;
+
+			function indexFromScroll() {
+				const i = Math.round(track.scrollLeft / slideWidth());
+				return Math.max(0, Math.min(maxIndex, i));
+			}
+
+			function goTo(i) {
+				track.scrollTo({ left: i * slideWidth(), behavior: 'smooth' });
+				update(i);
+			}
+
+			function update(i = indexFromScroll()) {
+				dots.forEach((d, di) => d.setAttribute('aria-selected', di === i ? 'true' : 'false'));
+				// Update aria-labels for slides (announce position)
+				slides.forEach((s, si) => s.setAttribute('aria-label', `${si+1} of ${slides.length}`));
+			}
+
+			// Buttons
+			prevBtn.addEventListener('click', () => goTo(Math.max(0, indexFromScroll() - 1)));
+			nextBtn.addEventListener('click', () => goTo(Math.min(maxIndex, indexFromScroll() + 1)));
+
+			// Dots click
+			dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+			// Keyboard (left/right)
+			track.addEventListener('keydown', (e) => {
+				if (e.key === 'ArrowLeft') { e.preventDefault(); prevBtn.click(); }
+				if (e.key === 'ArrowRight') { e.preventDefault(); nextBtn.click(); }
+			});
+
+			// Sync dots on manual scroll/drag
+			let raf = null;
+			track.addEventListener('scroll', () => {
+				if (raf) cancelAnimationFrame(raf);
+				raf = requestAnimationFrame(update);
+			});
+
+			// Auto-advance (pause on hover/focus)
+			let timer = null, paused = false;
+			const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			function startAuto() {
+				if (prefersReduced) return;
+				stopAuto();
+				timer = setInterval(() => {
+				if (paused) return;
+				const i = indexFromScroll();
+				goTo(i >= maxIndex ? 0 : i + 1);
+				}, 6000);
+			}
+			function stopAuto() { if (timer) clearInterval(timer); timer = null; }
+
+			['mouseenter','focusin'].forEach(ev => carousel.addEventListener(ev, () => { paused = true; }));
+			['mouseleave','focusout'].forEach(ev => carousel.addEventListener(ev, () => { paused = false; }));
+
+			// Resize: keep slide aligned
+			window.addEventListener('resize', () => goTo(indexFromScroll()));
+
+			update(0);
+			startAuto();
+			})();
+			</script>
+
 	</body>
 </html>

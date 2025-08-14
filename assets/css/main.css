@@ -4841,4 +4841,115 @@ body.dark-mode .button.primary:hover {
     box-sizing: border-box;
     background-color: transparent;
 }
+/* Section heading */
+/* .featured-carousel .section-title {
+  text-align: center;
+  margin-bottom: 1.25rem;
+} */
 
+/* Carousel frame */
+/* .featured-carousel .carousel {
+  position: relative;
+  overflow: hidden;
+} */
+
+/* Track (slides row) */
+/* .featured-carousel .track {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  gap: 0;
+  outline: none; */
+
+  /* keep bar visible but make its background transparent */
+  /* background: transparent;
+  scrollbar-width: thin;                               
+  scrollbar-color: rgba(160,160,160,.55) transparent;  
+} */
+/* WebKit (Chrome/Safari/Edge) */
+/* .featured-carousel .track::-webkit-scrollbar {
+  height: 8px;                 
+  background: transparent;     
+} */
+/* .featured-carousel .track::-webkit-scrollbar-track {
+  background: transparent;    
+} */
+/* .featured-carousel .track::-webkit-scrollbar-thumb {
+  background-color: rgba(160,160,160,.55);  
+  border-radius: 999px;
+  border: 2px solid transparent;           
+  background-clip: padding-box;
+} */
+
+/* Each slide fills the frame */
+/* .featured-carousel .slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* Keep text tidy and buttons aligned */
+/* .featured-carousel .slide .major { margin-bottom: 1rem; }
+.featured-carousel .slide .actions { margin-top: auto; } */
+
+/* Improve image presentation (use your chosen ratio) */
+/* .featured-carousel .image.main img {
+  width: 100%;
+  aspect-ratio: 4 / 3;      
+  object-fit: contain;       
+  background-color: transparent;
+  border: 3px solid transparent; 
+  border-radius: 8px;
+  box-sizing: border-box;
+} */
+
+/* Nav arrows */
+/* .featured-carousel .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+.featured-carousel .nav:hover { background: rgba(0,0,0,0.6); }
+.featured-carousel .nav.prev { left: .5rem; }
+.featured-carousel .nav.next { right: .5rem; } */
+
+/* Dots */
+/* .featured-carousel .dots {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+.featured-carousel .dots button {
+  width: 8px; height: 8px; border-radius: 999px;
+  border: 0; background: #cfd2d6; cursor: pointer;
+}
+.featured-carousel .dots button[aria-selected="true"] { background: #606770; } */
+
+/* Accessibility & motion */
+/* @media (prefers-reduced-motion: reduce) {
+  .featured-carousel .track { scroll-behavior: auto; }
+} */
+
+/* Tighten spacing inside the featured carousel */
+/* .featured-carousel .image.main { 
+  margin: 0.75rem 0 0.75rem;  
+}
+
+.featured-carousel .slide .actions { 
+  margin-top: 0.5rem;          
+} */
